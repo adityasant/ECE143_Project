@@ -33,7 +33,7 @@ def extract_wildfire_data(data_path):
     '''
 
     # Read the data
-    conn = sqlite3.connect('../Datasets/FPA_FOD_20170508.sqlite')
+    conn = sqlite3.connect(data_path)
     fire_data = \
         pd.read_sql_query("SELECT fire_size, fire_size_class, fire_year , \
             latitude, longitude FROM fires;", conn)
@@ -52,7 +52,7 @@ def plot_size_hist(wildfire_data):
     '''
 
     fig,ax = plt.subplots(figsize=(10, 5))
-    ax.hist(fire_data['FIRE_SIZE'],bins=20,edgecolor='white', linewidth=1);
+    ax.hist(wildfire_data['FIRE_SIZE'],bins=20,edgecolor='white', linewidth=1);
     ax.set_yscale('log')
     ax.set_xlabel('Area in hectares',fontsize=15);
     ax.set_ylabel('Num of Fires');
