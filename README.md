@@ -33,7 +33,7 @@ In order to make the repository light, the datasets are not saved online. The di
     - Dataset link: https://www.kaggle.com/unitednations/international-greenhouse-gas-emissions
     
 5. Temperature Dataset
-    - This dataset contains 
+    - This dataset contains monthly average temperature from 1992 to 2015
     - Dataset link: https://www.esrl.noaa.gov/psd/repository/entry/show?entryid=synth%3Ae570c8f9-ec09-4e89-93b4-babd5651e7a9%3AL25jZXAucmVhbmFseXNpcy5kZXJpdmVkL3N1cmZhY2UvYWlyLm1vbi5tZWFuLm5j
     
 6. Vegetation Dataset
