@@ -48,10 +48,10 @@ In order to visulaize the different plots, a demo notebook is prepared.
 
 ## Extracting and plotting wildfire information 
 The script wildfire_plots.py contains the script to plot the histograms and the different geographic plots
-'''
+```
 - location: src/wildfire_plots.py
 - run the command: python wildfires_plots.py
-'''
+```
 
 ## Plotting climate features
 
