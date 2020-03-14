@@ -51,7 +51,7 @@ There are two ways to run the entire codebase: as a python script and as a Jupyt
 2. Jupyter notebook
     ```
     - location: main repo
-    - run the notebook main_notebook.py
+    - run the notebook main_notebook.ipynb
     ```
 
 
