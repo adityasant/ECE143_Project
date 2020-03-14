@@ -305,7 +305,7 @@ def heatmap_corr(sample, threshold):
 if __name__ == "__main__":
     '''
     Code to plot wildfire basemap
-    For a more detailed code, refer to main_notebook.ipynb in Local Notebooks
+    For a more detailed code, refer to Final_correlation.ipynb in Local Notebooks
     '''
     
     # fire and gas
