@@ -302,9 +302,40 @@ def heatmap_corr(sample, threshold):
     return corr
 
     
+if __name__ == "__main__":
+    '''
+    Code to plot wildfire basemap
+    For a more detailed code, refer to main_notebook.ipynb in Local Notebooks
+    '''
     
+    # fire and gas
+    fire_data = '../Datasets/FPA_FOD_20170508.sqlite'
+    gas_data = '../Datasets/greenhouse_gas_inventory_data_data.csv'
     
+    df = extract_fire_gas(fire_data, gas_data)
+    fire_gas_heatmap(df)
     
+    # fire and weather
+    # use state='AK' for only Alaska, then you can choose whatever n because we are choosing all AK samples
+    #df = correlation.extract_fire_sample(fire_data, n=1, state='AK')
+    # use state='ALL' for all US, then you should choose n(like 500 in our PRE) as number of samples
+    df2 = extract_fire_sample(fire_data, n=100, state='ALL')
+    
+    wind_air_data = '../Datasets/adaptor.mars.internal.nc'
+    df2 = extract_wind_air(df2, wind_air_data)
+
+    rain_data = '../Datasets/precip.mon.mean.nc'
+    df2 = extract_rain(df2, rain_data)
+
+    temp_data = '../Datasets/air.mon.mean.nc'
+    df2 = extract_temp(df2, temp_data)
+    
+    df2 = change_col_name(df2, fire_data)
+    # scatter correlation
+    scatter_corr(df2, col1='Rain', col2='Fire Size', threshold=[2,6])
+    
+    # heatmap correlation
+    heat = heatmap_corr(df2, threshold=[2,6])
     
     
     
