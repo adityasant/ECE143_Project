@@ -56,9 +56,19 @@ This script will plot the different wildfires of size >5000 hectares from the ye
 
 
 ## Plotting climate features
+The script geographic_plot.py contains the functionalities to plot the different climate features. 
+```
+- location: src/geographic_plot.py
+- run the command: python geographic_plot.py
+```
+This script has been pre-matched to extract the temperature, rainfall and vegetation information for the duration between 1992-2015, for the different regions of USA.
 
 
 ## Showing climate correlations
+This script correlation_plots.py contains the script to match the different correlations for the climate features as well as the air pollutants, in the duration between 1992-2015. This script automatically extracts the locaton of the fires of interest and matches them with the climate and pollutant data to get the correlation values.
 
 
 ## Specific case study: Alaska wildfires
+The script temperature_analysis.py presents the specific results for Alaska for the wildfires between 1992-2015. This script will be able to provide the geographical plots for the specific region of Alaska in this period. This also provides a linear plot of the temperature and rainfall during this period. 
+
+
