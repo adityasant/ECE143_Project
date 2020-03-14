@@ -41,9 +41,17 @@ In order to make the repository light, the datasets are not saved online. The di
     - Dataset link: https://data.nodc.noaa.gov/cgi-bin/iso?id=gov.noaa.ncdc:C00813
 
 
-## Extracting and plotting wildfire information 
-Once the different datasets have been dowloaded and put in the "Datasets" folder, the notebook main_notebook.ipynb in the repository can be run to provide the different results. 
+## Running main notebook: Demo of plots
+In order to visulaize the different plots, a demo notebook is prepared. 
+- "main_notebook.ipynb" located in the main repo can be run directly using Jupyter notebooks
+- However, edits cannot be made in terms of the desired year and fire size information
 
+## Extracting and plotting wildfire information 
+The script wildfire_plots.py contains the script to plot the histograms and the different geographic plots
+'''
+- location: src/wildfire_plots.py
+- run the command: python wildfires_plots.py
+'''
 
 ## Plotting climate features
 
