@@ -10,7 +10,23 @@ import iris.plot as iplt
 import iris.quickplot as qplt
 from iris.time import PartialDateTime
 
-from temperature_analysis import region_based_cube
+def region_based_cube(cube,coords):
+    '''
+    Inputs:
+        cube with latitude and longitude as coords
+        coords: the region we want to extract from input cube
+    Outputs: 
+        A smaller cube within coords
+    '''
+    lat_min,lat_max,long_min,long_max = coords
+    lat_cons = iris.Constraint(latitude = lambda x : lat_min < x < lat_max)
+    if (long_min<0):
+        long_min = long_min+360
+    if(long_max <0) :
+        long_max = long_max+360
+    long_cons = iris.Constraint(longitude = lambda x : long_min < x < long_max)
+    new_cube = cube.extract(lat_cons & long_cons)
+    return new_cube
 
 def select_time(month_start: int, month_end: int, year_start: int, year_end: int, cube):
     """
@@ -28,15 +44,18 @@ def select_time(month_start: int, month_end: int, year_start: int, year_end: int
                             iris.Constraint(time=lambda x : year_start<=x<=year_end))
     return part_temp
 
-def process_cube(cube):
+def process_cube_us(path):
     """
         Do several steps of data processing(filtering time, filtering region, getting average).
-        Provide data for plotting.
+        Prepare data for plotting.
         Args:
-            cube: the input data
+            path: the input dataset path
         Returns: 
-            Cube after processing
+            A cube just focusing on the average data in US in the part several years.
     """
+    # load dataset
+    cube = iris.load_cube(path)
+
     # filter by time
     cube = select_time(5, 7, 1992, 2015, cube)
 
@@ -50,11 +69,13 @@ def process_cube(cube):
 
     return mean_temp
 
-def plot_temperature_us(cube):
+def plot_geometric_map(cube, label_name, color):
     """
     Plotting a geographic map from the given cube
     Args:
         cube: an iris cube object, representing data
+        label_name: name of the plot
+        color: name of the color map
     Returns:
         None. Just plotting.
     """
@@ -84,11 +105,11 @@ def plot_temperature_us(cube):
 
     Lon,Lat = meshgrid(lon,lat)
     x, y = m(Lon,Lat)
-    cs = m.pcolormesh(x,y,cube.data,shading='flat',cmap='viridis')
+    cs = m.pcolormesh(x,y,cube.data,shading='flat',cmap=color)
 
     # adjust the height of the label to be the same as the map
     cbar= plt.colorbar( fraction=0.046, pad=0.04)
-    cbar.set_label("Temperature (K)", labelpad=+1)
+    cbar.set_label(label_name, labelpad=+1)
     # plt.savefig('./us_temp.png', dpi=400)
     plt.show()
 
@@ -99,11 +120,11 @@ if __name__ == "__main__":
     some tiny differences. For further reference, just check my ipython notebook called "geographic_map.ipynb"
     """
 
-    # load data from directory
-    path = '../../air.mon.mean.nc'
-    cube = iris.load_cube(path)
-    cube = process_cube(cube)
-    plot_temperature_us(cube)
+    cube = process_cube_us('../../air.mon.mean.nc')
+    plot_geometric_map(cube,"Temperature (K)",'viridis')
+
+    cube = process_cube_us('../../precip.mon.mean.nc')
+    plot_geometric_map(cube,"Rainfall (mm/day)", plt.cm.YlGnBu)
 
 
 
