@@ -75,9 +75,17 @@ This script has been pre-matched to extract the temperature, rainfall and vegeta
 
 ## Showing climate correlations
 This script correlation_plots.py contains the script to match the different correlations for the climate features as well as the air pollutants, in the duration between 1992-2015. This script automatically extracts the locaton of the fires of interest and matches them with the climate and pollutant data to get the correlation values.
-
+```
+- location: src/correlation_plots.py
+- run the command: python correlation_plots.py
+```
+This will plot a small size sample of our data and its correlation.
 
 ## Specific case study: Alaska wildfires
 The script temperature_analysis.py presents the specific results for Alaska for the wildfires between 1992-2015. This script will be able to provide the geographical plots for the specific region of Alaska in this period. This also provides a linear plot of the temperature and rainfall during this period. 
-
+```
+- location: src/temperature_analysis.py
+- run the command: python temperature_analysis.py
+```
+This will plot the case study of Alaska we used in our presentation.
 
