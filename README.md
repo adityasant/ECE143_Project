@@ -52,6 +52,8 @@ The script wildfire_plots.py contains the script to plot the histograms and the 
 - location: src/wildfire_plots.py
 - run the command: python wildfires_plots.py
 ```
+This script will plot the different wildfires of size >5000 hectares from the years 1992-2015. Due to the smaller number of fires, we do not include the functionality to change the dates or fire sizes. 
+
 
 ## Plotting climate features
 
