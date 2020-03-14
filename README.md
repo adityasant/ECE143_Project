@@ -10,14 +10,35 @@ The following python 3.7 packages need to be installed on the machine prior to r
 - matplotlib
 - Basemap
 - sqlite3
-- 
+- seaborn
+- iris
 
 ## Preprocessing stage: Data Extraction
-In order to make the repository light, the datasets are not saved online. The different datasets are downloaded from the references provided and stored in the folder "Datasets", in the main repository. 
+In order to make the repository light, the datasets are not saved online. The different datasets are downloaded from the references provided and stored in the folder "Datasets", in the main repository. And do not change their filename.
 1. Wildfire Dataset
     - The wildfire dataset can be extracted from the million fires dataset on Kaggel
     - This dataset contains information about 1.8 million fires in USA from 1992 to 2015
     - Dataset link: https://www.kaggle.com/rtatman/188-million-us-wildfires
+    
+2. Rainfall Dataset
+    - This dataset contains monthly average precipitation from 1979/01 to 2020/02
+    - Dataset link: https://www.esrl.noaa.gov/psd/data/gridded/data.cmap.html
+    
+3. Wind and Air Pressure Dataset
+    - 
+    - Dataset link: 
+    
+4. Gas Emission Dataset
+    - 
+    - Dataset link: 
+    
+5. Temperature Dataset
+    - 
+    - Dataset link: 
+    
+6. Plantation Dataset
+    - 
+    - Dataset link: 
 
 
 ## Extracting and plotting wildfire information 
