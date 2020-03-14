@@ -1,7 +1,7 @@
 # Study of Wildfires in USA: ECE143 Project
 This repository contains the codes for the data extraction and analysis for the different wildfires in the USA. Our aim here is to visualize wildfires along with other climatic conditions. Additionally we provide numerical metrics in terms of the correlations for the different factors. We also provide a specific case study for the wildfires in Alaska. 
 
-All the python scripts are placed in the src directory. The different notebooks for the experiments conducted can be found in "Local Notebooks and Codes".
+All the python scripts are placed in the src directory. The different notebooks for the experiments conducted can be found in "Local Notebooks".
 
 ## Required python dependencies
 The following python 3.7 packages need to be installed on the machine prior to running the scripts. 
