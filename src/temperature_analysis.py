@@ -278,3 +278,45 @@ def plot_rainfall(st_month,end_month,year,rain_cube,fire_df,coords):
               alpha=1.2, vmin=90000,vmax=550000)
     plt.show()    
 
+
+if __name__ == "__main__":
+    '''
+    Code to plot Alaska case study
+    For a more detailed code, refer to main_notebook.ipynb
+    '''
+    
+    # create data
+    PATH = '../Datasets/FPA_FOD_20170508.sqlite'
+    fire_df = create_wildfire_df(PATH)
+    
+    coords = large_fire_coord('AK',10000,fire_df)
+    
+    PATH_temp = "../Datasets/air.mon.mean.nc"
+    cube_temp = iris.load_cube(PATH_temp)
+    cat.add_categorised_coord(cube_temp, 'year', 'time', get_year)
+    cat.add_categorised_coord(cube_temp, 'month', 'time', get_month)
+    cube_local = region_based_cube(cube_temp,coords)
+    
+    # geometric temperature
+    create_map(2004,coords,cube_local,fire_df)
+    
+    # trend analysis
+    fire_time_based = process_df_local(coords,fire_df)
+    fire_time_based = fire_time_based.rename(columns={"fire_year": "year", "fire_month": "month"})
+    PATH_temp = "../Datasets/air.mon.mean.nc"
+    cube_temp = iris.load_cube(PATH_temp)
+    cube_local = region_based_cube(cube_temp,coords)
+    
+    cube_max = cube_local.collapsed(['latitude','longitude'], iris.analysis.MAX)
+    df = cube_to_df(cube_max)
+    result = pd.merge(df, fire_time_based, on=['year', 'month'],how='left')
+    result.fillna(0,inplace=True)
+    create_plt(6,result)
+    
+    # geometric rainfall
+    PATH_rain = "../Datasets/precip.mon.mean.nc"
+    rain_cube = iris.load_cube(PATH_rain)
+    plot_rainfall(5,7,2004,rain_cube,fire_df,coords)
+    
+    
+
