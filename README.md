@@ -25,19 +25,19 @@ In order to make the repository light, the datasets are not saved online. The di
     - Dataset link: https://www.esrl.noaa.gov/psd/data/gridded/data.cmap.html
     
 3. Wind and Air Pressure Dataset
-    - 
+    - This dataset contains
     - Dataset link: 
     
 4. Gas Emission Dataset
-    - 
+    - This dataset contains
     - Dataset link: 
     
 5. Temperature Dataset
-    - 
+    - This dataset contains
     - Dataset link: 
     
 6. Plantation Dataset
-    - 
+    - This dataset contains
     - Dataset link: 
 
 
