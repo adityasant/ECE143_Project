@@ -25,20 +25,20 @@ In order to make the repository light, the datasets are not saved online. The di
     - Dataset link: https://www.esrl.noaa.gov/psd/data/gridded/data.cmap.html
     
 3. Wind and Air Pressure Dataset
-    - This dataset contains
-    - Dataset link: 
+    - This dataset contains monthly averaged wind speed and air-pressure on single levels from 1979 to present
+    - Dataset link: https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-single-levels-monthly-means?tab=overview
     
 4. Gas Emission Dataset
     - This dataset contains year-total gas emission of different greenhouse gas from 1990 to 2014
     - Dataset link: https://www.kaggle.com/unitednations/international-greenhouse-gas-emissions
     
 5. Temperature Dataset
-    - This dataset contains
-    - Dataset link: 
+    - This dataset contains 
+    - Dataset link: https://www.esrl.noaa.gov/psd/repository/entry/show?entryid=synth%3Ae570c8f9-ec09-4e89-93b4-babd5651e7a9%3AL25jZXAucmVhbmFseXNpcy5kZXJpdmVkL3N1cmZhY2UvYWlyLm1vbi5tZWFuLm5j
     
-6. Plantation Dataset
-    - This dataset contains
-    - Dataset link: 
+6. Vegetation Dataset
+    - This dataset contains NOAA Climate Data Record (CDR) of Normalized Difference Vegetation Index (NDVI)
+    - Dataset link: https://data.nodc.noaa.gov/cgi-bin/iso?id=gov.noaa.ncdc:C00813
 
 
 ## Extracting and plotting wildfire information 
